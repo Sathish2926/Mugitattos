@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import api from '../lib/api'
 import { resolveImageUrl } from '../lib/media'
 import { FADE_IN_UP, STAGGER_CONTAINER, SCALE_UP } from '../lib/animations'
+import SEO from '../lib/seo'
 
 export default function Home() {
   const [items, setItems] = useState([])
@@ -27,6 +28,12 @@ export default function Home() {
 
   return (
     <>
+      <SEO 
+        title="Mugi Tattoo Studio | Professional Tattoo Artist & Custom Designs"
+        description="Premium tattoo studio specializing in custom tattoo designs. Bold, clean artwork with personalized consultation. Book your tattoo appointment online today."
+        keywords="tattoo studio, tattoo artist, custom tattoos, professional tattooing"
+        url="https://mugi-tattoo.com/"
+      />
       {/* Cinematic Hero Section with Parallax */}
       <section className="relative min-h-[100vh] bg-[url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?q=80&w=2000&auto=format&fit=crop')] bg-cover bg-center bg-scroll md:bg-fixed overflow-hidden">
         {/* Premium Background Overlays */}

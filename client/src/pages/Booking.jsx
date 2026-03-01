@@ -5,6 +5,7 @@ import Button from '../components/Button'
 import FormField from '../components/FormField'
 import api from '../lib/api'
 import { FADE_IN_UP, TIMING } from '../lib/animations'
+import SEO from '../lib/seo'
 
 const TIME_SLOTS = [
   '10:00 AM', '11:00 AM', '12:00 PM', '01:00 PM', 
@@ -86,7 +87,14 @@ export default function Booking() {
   }
 
   return (
-    <Section title="Book a Session" subtitle="Tell us about your tattoo idea and preferred time.">
+    <>
+      <SEO 
+        title="Book a Tattoo Appointment | Mugi Tattoo Studio"
+        description="Book your tattoo appointment online at Mugi Tattoo Studio. Easy booking process for custom tattoo designs and professional tattooing services."
+        keywords="book tattoo, tattoo appointment, tattoo booking online"
+        url="https://mugi-tattoo.com/booking"
+      />
+      <Section title="Book a Session" subtitle="Tell us about your tattoo idea and preferred time.">
       <div className="max-w-6xl mx-auto">
         {/* Progress Indicator */}
         <motion.div 
@@ -432,5 +440,6 @@ export default function Booking() {
         </motion.div>
       </div>
     </Section>
+    </>
   )
 }

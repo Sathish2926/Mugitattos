@@ -5,6 +5,7 @@ import Modal from '../components/Modal'
 import api from '../lib/api'
 import { resolveImageUrl } from '../lib/media'
 import { FADE_IN_UP, STAGGER_CONTAINER, SCALE_UP } from '../lib/animations'
+import SEO from '../lib/seo'
 
 export default function Gallery() {
   const [open, setOpen] = useState(false)
@@ -24,6 +25,12 @@ export default function Gallery() {
 
   return (
     <>
+      <SEO 
+        title="Tattoo Gallery | Mugi Tattoo Studio | Custom Designs & Artwork"
+        description="Explore our portfolio of custom tattoo designs and professional artwork. View galleries of our latest tattoo work and get inspired for your next piece."
+        keywords="tattoo gallery, tattoo artwork, custom tattoo designs, tattoo portfolio"
+        url="https://mugi-tattoo.com/gallery"
+      />
       <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.6 }}>
         <Section title="Gallery" subtitle="Each piece tells a story — explore our latest work.">
           <motion.div

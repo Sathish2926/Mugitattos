@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import Section from '../components/Section'
 import { FADE_IN_UP, STAGGER_CONTAINER, SCALE_UP } from '../lib/animations'
+import SEO from '../lib/seo'
 
 export default function Contact() {
 
@@ -9,7 +10,14 @@ export default function Contact() {
   const emailBody = encodeURIComponent("Hi Mugi Tattoos, I would like to book a session.")
 
   return (
-    <Section title="Contact" subtitle="Reach us for inquiries or consultations.">
+    <>
+      <SEO 
+        title="Contact Mugi Tattoo Studio | Get in Touch"
+        description="Contact Mugi Tattoo Studio for tattoo inquiries and consultations. Reach us via email, phone, or WhatsApp for your tattoo questions."
+        keywords="contact tattoo studio, tattoo inquiry, tattoo consultation"
+        url="https://mugi-tattoo.com/contact"
+      />
+      <Section title="Contact" subtitle="Reach us for inquiries or consultations.">
       {/* Contact Cards Grid */}
       <motion.div
         initial="hidden"
@@ -152,5 +160,6 @@ export default function Contact() {
         </a>
       </motion.div>
     </Section>
+    </>
   )
 }
