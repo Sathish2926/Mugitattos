@@ -130,6 +130,23 @@ app.use('/api/bookings', bookingRoutes);
 app.use('/api/admin', authRoutes);
 app.use('/api/gallery', galleryRoutes);
 
+// Serve frontend build (must be after all API routes)
+const distPath = path.join(__dirname, '..', 'client', 'dist');
+console.log('[FRONTEND] Serving static files from:', distPath);
+app.use(express.static(distPath));
+
+// Serve index.html for all other routes (React Router)
+app.get('*', (req, res) => {
+  const indexPath = path.join(distPath, 'index.html');
+  console.log('[FRONTEND] Serving index.html for route:', req.path);
+  res.sendFile(indexPath, (err) => {
+    if (err) {
+      console.error('[FRONTEND] Error serving index.html:', err);
+      res.status(500).send('Error loading application');
+    }
+  });
+});
+
 app.use(errorHandler);
 
 module.exports = app;
