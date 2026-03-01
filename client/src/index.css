@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* smooth transitions */
+* { transition: color .2s ease, background-color .2s ease, opacity .2s ease, transform .2s ease; }
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
